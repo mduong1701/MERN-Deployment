@@ -1,0 +1,110 @@
+.box{
+    border: 2px solid black;
+    height: 100px;
+    width: 400px;
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: white;
+}
+
+.boxMain{
+    border: 2px solid black;
+    height: 100px;
+    width: 500px;
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: white;
+    display: flex;
+}
+
+.topBox{
+    border: 2px solid black;
+    height: 100px;
+    width: 550px;
+    background-color: brown;
+    /* display: flex; */
+}
+
+.bigBox{
+    border: 2px solid black;
+    height: auto;
+    width: 550px;
+    margin-bottom: 10px;
+    background-color: orange;
+}
+
+.buttonBlue{
+    color: white;
+    background-color: blue;
+    margin-left: 20px;
+    width: 150px;
+    height: 20px;
+    box-shadow: black 3px 3px;
+}
+
+.buttonRed{
+    color: white;
+    background-color: red;
+    margin-left: 20px;
+    width: 150px;
+    height: 20px;
+    box-shadow: black 3px 3px;
+}
+
+.picture{
+    background-color: gray;
+    height: 70px;
+    width: 70px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.pictureViewOne{
+    background-color: gray;
+    height: 70px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.flexDisplay{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+    height: 200px;
+    width: 550px;
+    background-color: orange;
+    border: 2px solid black;
+}
+
+.flexDisplayViewOne{
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    height: 250px;
+    width: 550px;
+    background-color: orange;
+    border: 2px solid black;
+}
+
+.shiver{
+    height: 100px;
+    width: 200px;
+    text-align: center;
+}
+
+.details{
+    background-color: white;
+    height: 230px;
+    width: 250px;
+}
+
+.center{
+    text-align: center;
+}
+
+.name{
+    color: white;
+}
