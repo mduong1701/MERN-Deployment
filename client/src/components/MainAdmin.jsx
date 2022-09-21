@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import pirateStyle from './Main.module.css';
-import NavBar from './NavBar';
 import Button from 'react-bootstrap/Button';
+import NavBar from './NavBar';
 
 const Main = (props) => {
 
     const [pirates, setPirates] = useState([]);
     const navigate = useNavigate();
+    const handleAdd = () => {
+        navigate("/admin/new");
+    }
 
     const compareName = (a, b) => {
 
@@ -36,6 +39,17 @@ const Main = (props) => {
             .catch(err => console.log(err))
     }, [])
 
+    const deletePirate = (deleteID) => {
+        axios.delete(`http://localhost:8000/api/fruits/${deleteID}`)
+            .then(res => {
+                console.log(res.data);
+                console.log("Delete successfully");
+                // remove the note from the DOM after a successful deletion
+                setPirates(pirates.filter((pirate) => pirate._id !== deleteID));
+            })
+            .catch(err => console.log(err))
+    }
+
     const viewPirate = (viewID) => {
         navigate("/fruits/" + viewID);
     }
@@ -45,7 +59,12 @@ const Main = (props) => {
             <div className={pirateStyle.topBox}>
                 <NavBar />
             </div>
-
+            <div>
+                <Button
+                    onClick={handleAdd}>
+                    Add Fruit
+                </Button>
+            </div>
             <div className={pirateStyle.bigBox}>
                 {pirates.map((onePirate) => {
                     return (
@@ -58,8 +77,15 @@ const Main = (props) => {
                                     variant="info">
                                     Info
                                 </Button>
-
+                                <hr></hr>
+                                <Button
+                                    variant="info"
+                                    onClick={() => deletePirate(onePirate._id)}>
+                                    Delete
+                                </Button>
                             </div>
+
+
 
                         </div>
                     )

@@ -1,46 +1,46 @@
-const Pirate = require("../models/Pirate")
+const Fruit = require("../models/Fruit")
 
 module.exports = {
     // READ ALL
     findAll: (req, res) => {
         // use the model to execute a query
-        Pirate.find()
-            .then(allPirates => {
-                res.json(allPirates)
+        Fruit.find()
+            .then(allFruits => {
+                res.json(allFruits)
             })
             .catch(err => res.json(err))
     },
 
     // Create
     create: (req, res) => {
-        Pirate.create(req.body)
-            .then(newPirate => {
-                res.json({message: "created", newPirate, status: 200})
+        Fruit.create(req.body)
+            .then(newFruit => {
+                res.json({message: "created", newFruit, status: 200})
             })
             .catch(err => res.status(400).json(err));
     },
 
     // Read one
     findOne: (req, res) => {
-        Pirate.findById(req.params.id)
-            .then(onePirate => res.json(onePirate))
+        Fruit.findById(req.params.id)
+            .then(oneFruit => res.json(oneFruit))
             .catch(err => res.json({ message: 'Something went wrong', error: err }));
     },
 
     // Update
     update: (req, res) => {
-        Pirate.findByIdAndUpdate(
+        Fruit.findByIdAndUpdate(
             req.params.id,
             req.body,
             { new: true, runValidators: true }
         )
-            .then(updatedPirate => res.json({message: "created", updatedPirate, status: 200}))
+            .then(updatedFruit => res.json({message: "created", updatedFruit, status: 200}))
             .catch(err => res.status(400).json(err));
     },
 
     // Delete
     delete: (req, res) => {
-        Pirate.findByIdAndDelete(req.params.id)
+        Fruit.findByIdAndDelete(req.params.id)
             .then(result => res.json({ result }))
             .catch(err => res.json(err));
     }
