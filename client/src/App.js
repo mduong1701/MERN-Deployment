@@ -14,26 +14,19 @@ function App() {
       <Routes>
         {/* Main - all Notes */}
         <Route path='/' element={<Home />} />
-
         {/* Main - all Notes */}
         <Route path='/contact' element={<Contact />} />
-
         {/* Main - all Notes */}
         <Route path='/allfruits' element={<Main />} />
-
         {/* View one */}
         <Route path='/fruits/:id' element={<ViewOne />} />
-
         {/* Redirect */}
         <Route path='*' element={<Navigate to="/" />} />
       {/* ===================================================================== */}
         {/* Admin Main - all Notes */}
         <Route path='/admin' element={<MainAdmin />} />
-
         {/* Create */}
         <Route path='/admin/new' element={<Create />} />
-      
-      
       </Routes>
     </div>
   );

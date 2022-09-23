@@ -33,6 +33,15 @@
     /* background-color: orange; */
 }
 
+.homeText{
+    /* border: 2px solid black; */
+    height: auto;
+    width: 550px;
+    /* margin-bottom: 10px; */
+    /* background-color: orange; */
+    text-align: center;
+}
+
 .buttonBlue{
     color: white;
     background-color: blue;
